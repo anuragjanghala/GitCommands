@@ -1,8 +1,8 @@
 # GitCommands
 
-####.git is the hidden repository in working directory which has staging area and commits
+#### .git is the hidden repository in working directory which has staging area and commits
 
-###Basic Git Commands:
+### Basic Git Commands:
 
 git init - to initialize .git repository in working directory
 
