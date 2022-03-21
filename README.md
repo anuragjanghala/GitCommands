@@ -117,3 +117,31 @@ Undoing changes after commit:
 - it will remove the lastest commit and also will remove it from staging area but wont delete the file.
 #### git reset --hard HEAD~1 
 - it will remove the lastest commit and will remove it from staging area but will also delete the file.
+
+
+Deleting Branch:
+#### git branch -d/-D "branch-name" 
+- this will delete the branch
+#### git branch -d/-D "first-branch" "second-branch" 
+- this will be used to delete multiple branches here two
+
+
+
+
+Detached branch:
+#### git checkout "commit_id" 
+- to go to detached-head
+
+after doing some changes we add and commit at detached-head
+#### git add .
+#### git commit -m "changes in detached-head"
+
+#### git branch "detached-head-branch" 
+- now we need to make another branch that will save the changes from detached-head otherwise if try to switch other branch it will show warning and changes wont we updated.
+
+#### git switch master 
+- then we switch
+#### git merge "detached-head-branch" 
+- and merge it with main branch to have those changes
+#### git branch -d "detached-head-branch" 
+- then we can delete that "detached-head-branch"
