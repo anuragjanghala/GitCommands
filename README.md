@@ -23,7 +23,8 @@ To authourize with your identity so that other people know who created any chang
 #### git config --global user.email "you@email.com"
 #### git config --global user.name "your name"
 
-#### git log - to get all the information about commits in that specific branch
+#### git log 
+- to get all the information about commits in that specific branch
 
 
 Checkout is used to move around branches and commits
