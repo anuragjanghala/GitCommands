@@ -2,6 +2,8 @@
 
 Basic Git Commands:
 
+git --version : to check if git is installed and which version
+
 git init - to initialize .git repository in working directory
 
 git status - to get some inportant information about files in the directory
@@ -18,6 +20,7 @@ git config --global user.name "your name"
 
 git log - to get all the information about commits in that specific branch
 
+git ls-files - to check which files are currently there in unstaged from the latest commit or all file in staging area refering to a commit
 
 
 
@@ -39,7 +42,7 @@ git checkout -b "branch-name" - it will create a new branch and move us to that 
 
 
 
-Merges : if a branch is ahead of main branch and we want to add merge its changes to main branch:
+Merges : if a branch is ahead of main branch and we want to add merge its changes to current branch:
 git merge "branch-name" - if we want to merge we should checkout to that branch on which we want to merge and then merge from "branch-name"
 
 - if we use 'git log', we see
@@ -101,6 +104,25 @@ git reset --hard HEAD~1 - it will remove the lastest commit and will remove it f
 
 
 
+Deleting Branch:
+git branch -d/-D "branch-name" : this will delete the branch
+git branch -d/-D "first-branch" "second-branch" : this will be used to delete multiple branches here two
+
+
+
+
+Detached branch:
+git checkout "commit_id" - to go to detached-head
+
+after doing some changes we add and commit at detached-head
+git add .
+git commit -m "changes in detached-head"
+
+git branch "detached-head-branch" - now we need to make another branch that will save the changes from detached-head otherwise if try to switch other branch it will show warning and changes wont we updated.
+
+git switch master - then we switch
+git merge "detached-head-branch" - and merge it with main branch to have those changes
+git branch -d "detached-head-branch" - then we can delete that "detached-head-branch"
 
 
 
