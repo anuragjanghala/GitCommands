@@ -4,7 +4,8 @@
 
 ### Basic Git Commands:
 
-git init - to initialize .git repository in working directory
+####git init 
+- to initialize .git repository in working directory
 
 git status - to get some inportant information about files in the directory
 
