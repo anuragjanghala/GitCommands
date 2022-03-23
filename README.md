@@ -88,8 +88,8 @@ To undo changes for tracked files at unstaged level (to avoid use of checkout):
 Deleting untracked files :
 #### git clean -dn 
 - to get all the entries we want to delete
-#### git clean 
--df - to delete
+#### git clean -df 
+- to delete
 
 
 
@@ -145,3 +145,8 @@ after doing some changes we add and commit at detached-head
 - and merge it with main branch to have those changes
 #### git branch -d "detached-head-branch" 
 - then we can delete that "detached-head-branch"
+
+
+
+
+##### readme u.9
