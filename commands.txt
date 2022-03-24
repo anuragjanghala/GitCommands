@@ -138,5 +138,29 @@ git stash drop {number} - to drop data from stash
 git stash clear - to drop the whole stash
 
 
+'git reflog'
+git refolg - can show us the overview of all the changes that we applied in this branch.
+
+if we want to bring back some changes deleted
+git reset --hard "hash" - to bring back the head to a commit
+
+reflog can work well when we need to bring back deleted branch
+for ex:
+git checkout -b feature
+git add .
+git commit -m "added a file"
+git switch master
+git brnach -D feature
+
+now the branch is deleted.
+git reflog
+
+to recreate the branch we need two steps:
+1. take the hash value of the change/commit that we did in feature branch
+git checkout "hash" - checkout to that commit (basically detached head will form)
+2. create a branch with either switch or checkout command
+git swtich -c feature / git checkout -b feature
+
+after this changes will be back with new branch
 
 
