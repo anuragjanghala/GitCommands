@@ -164,3 +164,23 @@ git swtich -c feature / git checkout -b feature
 after this changes will be back with new branch
 
 
+
+
+MERGES - fast-forward and Non-fastforward
+1. fast-forward merge - is done when there is no additional commit in master branch after feature branch was created. this merge moves HEAD forward but does not create new commit.
+simply switching to master/main branch and merging feature branch will work.
+git switch master
+git merge feature
+
+to go back to inital state we need to go back to a specific commit in master but in feature those commits will still stay the same.
+git reset --hard HEAD~{number}
+
+we can use --squash, which collects all the commits in feature branch which doesn't belong to master and create a single commit for all those changes. But we need to commit these changes by ourself after using the merge --squash command
+git merge --squash feature
+git commmit -m "message"
+git log - to check what happened there
+
+
+
+
+
