@@ -126,3 +126,17 @@ git branch -d "detached-head-branch" - then we can delete that "detached-head-br
 
 
 
+Other Deep Dive commands:
+'git stash':
+git stash - can be used to save unstaged changes if we ant to go back to latest committed changes.
+git stash apply - to bring back those saved unstaged changes
+git stash list - to list all saved changes in stash (top one will be latest stashed data)
+git stash apply {number} - to go to specific stashed change we need to go back to staged area with latest commmit for that we need to use 'git stash' again. then we can use this command.
+git stash push -m "message" - it is better to use it with message to make it easier to know about stashed changes.
+git stash pop {number} - to remove n add this stashed change from stashed area to unstaged area. (as in apply data stays in stash)
+git stash drop {number} - to drop data from stash
+git stash clear - to drop the whole stash
+
+
+
+
