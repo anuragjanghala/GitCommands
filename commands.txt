@@ -208,6 +208,10 @@ A.
 3. when feature is fininshed - implementation into master without merge commit (rebase master into feature, merge (in ff mode) feature into master)
 
 
+Conflicts in MERGE:
+git merge --abort - can be used to undo merge command when we have conflicts while merging.
+otherwise we can just fix conflicts and commmit and it will create a merge commit in master branch at the end.
+
 
 
 
