@@ -180,6 +180,12 @@ git merge --squash feature
 git commmit -m "message"
 git log - to check what happened there
 
+2. No-fast-forward merge (Recursive merge) - it used normally when both branches have differnet commit after base commit
+git merge --no-ff "branch" - after merging an additional commit was created in master branch we can check that with git log
+if we want to go back to previous state we just need hard rest only one commit that is the latest merge commit by using command 'git reset --hard HEAD~1'
+we can squash command for the commit as well which will collect all the commits of feature branch into single commit but we have to commit it by ouself
+git merge --squash merge
+git commit -m "message(merged master and feature)"
 
 
 
