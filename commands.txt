@@ -190,3 +190,24 @@ git commit -m "message(merged master and feature)"
 
 
 
+
+REBASE:
+rebase does not move commit but instead it create new commits with same content in the branch without having merge commits.
+let m2 be the base commit for master and feature branches. m3 is latest commit in master and f1 and f2 in feature.
+so now if we use rebase command while present on feature branch, firstly it will create m3 to be the base commit for both branches and then add f1 and f2 over it but as commits with new hash value but same content. then we can switch to master branch use merge command to merge feature branch in ff mode.
+
+git swtich feature
+git rebase master (from m1,m2,f1,f2 to m1,m2,m3,f1*,f2* in feature branch) (* means different hash values but same content)
+git switch master
+git merge feature (it will be ff merge automatically)
+
+Q. when can we apply rebase command?
+A.
+1. new commits in master branch while working in feature branch
+2. feature relies on additional commits in master branch but it will affect the id of feature commits.
+3. when feature is fininshed - implementation into master without merge commit (rebase master into feature, merge (in ff mode) feature into master)
+
+
+
+
+
