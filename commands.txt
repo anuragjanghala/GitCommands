@@ -219,4 +219,25 @@ git cherry-pic "commit_id(hash)" - although it will fix the issue but will creat
 
 
 
+TAGS : are used to tag important stages in history
+1. lightweight tag - a pointer towards a commit in a branch like (HEAD in a branch)
+2. annotated tag - it can have information like email of the person who commited
+
+to get all the tags
+git tag
+
+to add a lightweight tag (if we dont specifiy commit_id then it will tag latest commit)
+git tag 1.0 "commit_id"
+
+git show 1.0 - allows us to show the details linked to that tag
+
+to delete a tag
+git tag -d 1.0
+
+
+to add a annotated tag (if we dont specifiy commit_id then it will tag latest commit)
+git tag -a 2.0 "commit_id" -m "message"
+
+
+
 
