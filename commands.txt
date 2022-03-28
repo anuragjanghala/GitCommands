@@ -213,5 +213,10 @@ git merge --abort - can be used to undo merge command when we have conflicts whi
 otherwise we can just fix conflicts and commmit and it will create a merge commit in master branch at the end.
 
 
+Cherry-Picking: with this method we can use the changes of the specific commit without including other commits. ex - if we have a typo in some txt file in master branch, and we created a new branch for new feature and then we worked on that feature branch with few commits. suddenly realising that there is a typo mistake in some txt file and we fixed it (and commit it). and worked on our features in that ffeature branch. and with cherry picking method we can resilve that issue.
+
+git cherry-pic "commit_id(hash)" - although it will fix the issue but will create a new commit with different id(hash).
+
+
 
 
