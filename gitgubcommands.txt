@@ -1,0 +1,1 @@
+git remote add origin URL(HTTPS or SSH)
