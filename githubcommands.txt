@@ -19,9 +19,11 @@ git ls-remote
 
 
 Now to get remote branch into local repo:
-git fetch origin - is used to add changes to remote tracking branch in local repo so that later we can save it on our local branch
+git fetch origin 
+- is used to add changes to remote tracking branch in local repo so that later we can save it on our local branch
 
-git pull - remote data to local repo
+git pull 
+- remote data to local repo
 
 
 ALL BRANCHES: remote, local, remote tracking, local tracking
@@ -30,6 +32,9 @@ remote branch -> (git fetch) -> remote tracking branch(uneditable branch) -> (gi
 
 remote branch <- remote tracking branch(uneditable branch) <- (git push) <- local tracking branch
 
+
+
+CREATING BRANCHS locally and remotely:
 how to create a local tracking branch which will connect to remote taracking branch specified
 git branch --track 'branch_name' origin/'branch_name'
 
@@ -38,12 +43,52 @@ after connecting we dont need to put 'origin remote_branch_name' everytime when 
 So the basic difference between local branch and local tracking branch is:
 local tracking branches are connected to remote branches through remote tracking branches.
 and we can check that with command:
-git branch -vv - it will show us the connected all local and local tracking branches.
+git branch -vv 
+- it will show us the connected all local and local tracking branches.
 
 once we connect local and remote tracking branches we dont need to put 'origin branchname' in commands. 
 
 If we create a local branch then we have to push that to remote repo:
 git push origin 'branch_name'
 
+If we created a local feature branch and pushed it using
+git push origin feature
 
+it wont connect to tracking branch so to do that we can use
+git branch --set-upstream-to=origin/feature feature 
+- this will create a upstream connection with the remote branch.
+
+another way : if we have a remote feature branch but dont have a local branch
+git branch --track feature origin/feature 
+- this will create a new branch named feature connect to remote branch.
+
+if we use -u while pushing a local branch to remote it will automatically convert local branch into a local tarcking branch linked to remote tracking branch.
+
+
+
+
+
+
+DELTETING BRANCHES locally and remotely:
+using this command we can delete local branch which is connected to upstream:
+git branch -d/-D branch_name
+
+now to delete remote tracking branches:
+git branch --delete --remotes origin/branch_name
+- this wont affect the remote banches we can check that using git ls-remote
+
+now to delete remote branches:
+git push origin --delete branch_name
+- this can also delete remote tracking branch of that deleted branch so dont need to do that manually using 'git branch --delete --remotes origin/branch_name' command.
+
+Now if we want to delete a commit locally and remotely:
+git reset --hard HEAD~1
+- this will delete the commit and will change the head of local branch to previous commit but origin/branch head will stay the same
+
+now we need to push these changes to remote origin to delete that commit from origin as well:
+(git push) wont work as we are behind locally from origin branch which can lead to problems
+but still we want to delete we can force that.
+git push --force
+- this will only work if upstream is setup to remote branch otherwise we need to use
+git push --force origin "branch_name"
 
