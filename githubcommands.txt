@@ -1,0 +1,49 @@
+
+git remote - show remote servers
+git remote show origin - show detailed configuration (if exists)
+git remote add origin URL(HTTPS or SSH)
+
+git push - local data to remote repo
+git push -u origin main - (-u)-> upstream
+git push origin main - if we omit -u we have to use 'origin main' everytime we push to remote branch
+
+
+this will only list local branches:
+git branch -r - to list remote tracking branches
+git branch -a - to list all branches (local, loacl tracking and remote tracking) (not remote branches)
+
+
+for listing remote branches that doesn't have tracking branch in local:
+git ls-remote
+
+
+
+Now to get remote branch into local repo:
+git fetch origin - is used to add changes to remote tracking branch in local repo so that later we can save it on our local branch
+
+git pull - remote data to local repo
+
+
+ALL BRANCHES: remote, local, remote tracking, local tracking
+
+remote branch -> (git fetch) -> remote tracking branch(uneditable branch) -> (git merge) -> local tracking branch
+
+remote branch <- remote tracking branch(uneditable branch) <- (git push) <- local tracking branch
+
+how to create a local tracking branch which will connect to remote taracking branch specified
+git branch --track 'branch_name' origin/'branch_name'
+
+after connecting we dont need to put 'origin remote_branch_name' everytime when we fetch/pull/push.
+
+So the basic difference between local branch and local tracking branch is:
+local tracking branches are connected to remote branches through remote tracking branches.
+and we can check that with command:
+git branch -vv - it will show us the connected all local and local tracking branches.
+
+once we connect local and remote tracking branches we dont need to put 'origin branchname' in commands. 
+
+If we create a local branch then we have to push that to remote repo:
+git push origin 'branch_name'
+
+
+
