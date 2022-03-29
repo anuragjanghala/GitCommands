@@ -19,11 +19,19 @@ git ls-remote
 
 
 Now to get remote branch into local repo:
+git fetch --dry-run
+- option will perform a demo run of the command. It will output examples of actions it will take during the fetch but not apply them.
 git fetch origin 
 - is used to add changes to remote tracking branch in local repo so that later we can save it on our local branch
+git fetch origin branch_name
+- it will only fetch changes related to that specific branch
 
+git pull <remote>
+- Fetch the specified remote’s copy of the current branch and immediately merge it into the local copy. This is the same as git fetch ＜remote＞ followed by git merge origin/＜current-branch＞.
 git pull 
-- remote data to local repo
+- remote data to local repo if its linked with upstream
+git pull --rebase origin
+- This simply moves your local changes onto the top of what everybody else has already contributed.
 
 
 ALL BRANCHES: remote, local, remote tracking, local tracking
