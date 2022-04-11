@@ -89,6 +89,9 @@ now to delete remote branches:
 git push origin --delete branch_name
 - this can also delete remote tracking branch of that deleted branch so dont need to do that manually using 'git branch --delete --remotes origin/branch_name' command.
 
+
+
+DELETING A COMMIT REMOTELY:
 Now if we want to delete a commit locally and remotely:
 git reset --hard HEAD~1
 - this will delete the commit and will change the head of local branch to previous commit but origin/branch head will stay the same
@@ -99,6 +102,11 @@ but still we want to delete we can force that.
 git push --force
 - this will only work if upstream is setup to remote branch otherwise we need to use
 git push --force origin "branch_name"
+
+if we want to delete a commit that has already been pushed but other team members are working on it, So it can cause problem if we delete it using force command. It might create a problem of history loss for other working over that commit.
+so to deal with that we can use:
+git revert "HASH_ID_OF_COMMIT"
+- it will create a revert commit on that specific commit without affect other commits in the history and wont create problem for those who are working with that commit.
 
 
 If we want to remove some commited files/folders like node_modules from remote. As if we add them in .gitignore in local and commit it, it wont affect that as git is tracking them from remote. So to remove them from tracking so that we can delete them from remote and put them in gitignore.
