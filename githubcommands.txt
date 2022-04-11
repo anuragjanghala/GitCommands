@@ -100,3 +100,10 @@ git push --force
 - this will only work if upstream is setup to remote branch otherwise we need to use
 git push --force origin "branch_name"
 
+
+If we want to remove some commited files/folders like node_modules from remote. As if we add them in .gitignore in local and commit it, it wont affect that as git is tracking them from remote. So to remove them from tracking so that we can delete them from remote and put them in gitignore.
+we can use:
+git rm -r --cached "file_name/folder_name"
+
+
+
