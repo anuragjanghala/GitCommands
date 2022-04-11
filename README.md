@@ -117,6 +117,9 @@ Undoing changes after commit:
 - it will remove the lastest commit and also will remove it from staging area but wont delete the file.
 #### git reset --hard HEAD~1 
 - it will remove the lastest commit and will remove it from staging area but will also delete the file.
+#### git commit --amend
+- this wont delete the last commmit instead it will merge changes in the commit that we did.
+- example: if we did added 2 line of code into a file and commit that. soon after we realise we wanted 3 line of code so we add new line and then use commit --amend to merge those changes in latest/last commit we created instead of creating new commit.
 
 
 Deleting Branch:
@@ -280,4 +283,4 @@ to add a annotated tag (if we dont specifiy commit_id then it will tag latest co
 
 
 
-##### readme u.10
+##### readme u.11
